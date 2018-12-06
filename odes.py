@@ -39,15 +39,11 @@ def Heun(N):
     
     k2 = np.zeros(N)
     k2[0] = 1
-    
+
     d = (10 * np.pi)/N
-    
+
     for x in range(1, len(n)):
-        #ubar = uk[i-1] + dt*u2k[i-1]
-        #upbar = u2k[i-1] - dt*uk[i-1]
-        #uk[i] = uk[i-1] + (dt/2)*(u2k[i-1] + upbar)
-        #u2k[i] = u2k[i-1] - (dt/2)*(ubar + uk[i-1])
-        
+
         temp1 = k2[x-1] - d*k1[x-1]
         temp2 = k1[x-1] + d*k2[x-1]
         k1[x] = k1[x-1] + (d/2)*(k2[x-1]+temp1)
